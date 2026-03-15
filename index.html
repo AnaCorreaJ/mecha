@@ -43,7 +43,7 @@ font-size:16px;
 <div class="grid">
 
 <img id="img1" onclick="randomImage('elvira','img1')">
-<img id="img2" onclick="randomImage('ana','img2')">
+<img id="img2" onclick="randomImage('Ana','img2')">
 
 <img id="img3" onclick="randomImage('rodrigo','img3')">
 <img id="img4" onclick="randomImage('alba','img4')">
@@ -55,10 +55,10 @@ font-size:16px;
 <script>
 
 const images={
-ana:["1.jpg","2.jpg","3.jpg"],
-maria:["1.jpg","2.jpg"],
-sofia:["1.jpg","2.jpg"],
-laura:["1.jpg","2.jpg"]
+elvira:["1.jpg","2.jpg","3.jpg"],
+Ana:["1.jpg","2.jpg"],
+rodrigo:["1.jpg","2.jpg"],
+alba:["1.jpg","2.jpg"]
 }
 
 function randomImage(folder,id){
@@ -69,7 +69,7 @@ document.getElementById(id).src=folder+"/"+img
 
 function generate(){
 randomImage("elvira","img1")
-randomImage("ana","img2")
+randomImage("Ana","img2")
 randomImage("rodrigo","img3")
 randomImage("alba","img4")
 }
