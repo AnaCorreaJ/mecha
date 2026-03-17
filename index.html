@@ -15,7 +15,7 @@ background-attachment:fixed;
 font-family:sans-serif;
 }
 
-/* CONTENEDOR IMAGEN */
+/* CONTENEDOR */
 
 .img-container{
 position:absolute;
@@ -34,7 +34,7 @@ padding:6px;
 transition:opacity 0.3s;
 }
 
-/* TEXTO ENCIMA */
+/* TEXTO */
 
 .texto{
 position:absolute;
@@ -152,7 +152,7 @@ const textosRodrigo=[
 `El vestido me lo regaló mi amiga Ara, una bruja de la costa. Esa máscara sirve para no morir ahogado bajo el humo de la lacrimógena policial. La cubrí de brillos cuando trabajaba de gogo.`
 ]
 
-/* FUNCIÓN IMÁGENES */
+/* FUNCIÓN */
 
 function randomImage(folder,id,containerId,textId){
 
@@ -172,12 +172,14 @@ let y=Math.random()*80
 container.style.left=x+"vw"
 container.style.top=y+"vh"
 
-/* TEXTO ANA Y RODRIGO */
+/* TEXTO CORREGIDO */
 
 if(folder==="Ana" || folder==="rodrigo"){
 
 let textos = folder==="Ana" ? textosAna : textosRodrigo
-textoBox.innerText=textos[index]
+
+let numero = parseInt(img.split(".")[0]) - 1
+textoBox.innerText = textos[numero]
 
 container.onmouseenter=()=>{
 element.style.opacity=0.2
@@ -242,7 +244,7 @@ y:rect.top+rect.height/2
 }
 })
 
-/* sombra */
+/* SOMBRA */
 ctx.beginPath()
 ctx.moveTo(points[0].x,points[0].y)
 
@@ -254,7 +256,7 @@ ctx.strokeStyle="rgba(0,0,0,0.25)"
 ctx.lineWidth=4
 ctx.stroke()
 
-/* línea roja fina */
+/* LÍNEA ROJA */
 ctx.beginPath()
 ctx.moveTo(points[0].x,points[0].y)
 
