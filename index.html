@@ -28,7 +28,7 @@ cursor:pointer;
 .img-container img{
 width:100%;
 border-radius:8px;
-box-shadow:0 15px 40px rgba(0,0,0,0.4);
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
 background:white;
 padding:6px;
 transition:opacity 0.3s;
@@ -135,6 +135,23 @@ const textosAna=[
 `Comprada de segunda mano por una aplicación. Su corte es perfecto, la más cómoda que tengo. No me importa su tela desgastada`
 ]
 
+/* TEXTOS RODRIGO */
+
+const textosRodrigo=[
+`Siempre quise unos Dr.Martens. Esos son veganos -nunca estuvieron vivos-. 7 años caminando rajaron la suela.`,
+`Ropa interior blanca típica de gay en twitter. Me la compraron en circunstancias complejas de explicar. Cómodos, el algodón respira.`,
+`El merch que hicieron mis amigas de Biblioteca Queer. Me regalaron esa camiseta porque tiene una mancha de tinta. Estampar es resistir.`,
+`La primera vez que vi Sakura Card Captor me conmoví hasta las lágrimas. Mi colección de camisetas de animé me hacen sentir niño. El mundo no es nada sin magia.`,
+`Me costó 3 euros en un mercadillo. La tengo hace 10 años. Una vez la perdí en una fiesta y al otro día la encontré en los objetos perdidos.`,
+`Regalo del novio de una tía. Era de su abuelo. ¿Cuántos años tiene?`,
+`Ropa de hombre. La lana abriga como un abrazo. La fibra sin tejer no es ropa.`,
+`En la protesta me cubría el rostro. Me la regaló un amigo de la universidad. Me gustan los patrones intrincados.`,
+`Nunca más usaré corbata. Te quiero mucho Rodrigo inocente. La camisa blanca del colegio siempre volvía a casa con manchas.`,
+`Mi primer tatuaje me lo hice a los 15 años. No necesité permiso de mis padres. Tatuarse es una forma de vestirse.`,
+`Delia es la perra de mi profesora de Artes del colegio. Nos hicimos amigas una vez que me gradué. Estoy usando su ropa, la foto me la hizo ella en su casa de Padre Hurtado.`,
+`El vestido me lo regaló mi amiga Ara, una bruja de la costa. Esa máscara sirve para no morir ahogado bajo el humo de la lacrimógena policial. La cubrí de brillos cuando trabajaba de gogo.`
+]
+
 /* FUNCIÓN IMÁGENES */
 
 function randomImage(folder,id,containerId,textId){
@@ -155,11 +172,12 @@ let y=Math.random()*80
 container.style.left=x+"vw"
 container.style.top=y+"vh"
 
-/* TEXTO SOLO ANA */
+/* TEXTO ANA Y RODRIGO */
 
-if(folder==="Ana"){
+if(folder==="Ana" || folder==="rodrigo"){
 
-textoBox.innerText=textosAna[index]
+let textos = folder==="Ana" ? textosAna : textosRodrigo
+textoBox.innerText=textos[index]
 
 container.onmouseenter=()=>{
 element.style.opacity=0.2
@@ -209,9 +227,6 @@ canvas.height=window.innerHeight
 
 ctx.clearRect(0,0,canvas.width,canvas.height)
 
-ctx.strokeStyle="rgba(200,0,0,0.5)"
-ctx.lineWidth=3
-
 let imgs=[
 document.getElementById("img1"),
 document.getElementById("img2"),
@@ -227,6 +242,7 @@ y:rect.top+rect.height/2
 }
 })
 
+/* sombra */
 ctx.beginPath()
 ctx.moveTo(points[0].x,points[0].y)
 
@@ -234,6 +250,20 @@ for(let i=1;i<points.length;i++){
 ctx.lineTo(points[i].x,points[i].y)
 }
 
+ctx.strokeStyle="rgba(0,0,0,0.25)"
+ctx.lineWidth=4
+ctx.stroke()
+
+/* línea roja fina */
+ctx.beginPath()
+ctx.moveTo(points[0].x,points[0].y)
+
+for(let i=1;i<points.length;i++){
+ctx.lineTo(points[i].x,points[i].y)
+}
+
+ctx.strokeStyle="rgba(220,0,0,0.6)"
+ctx.lineWidth=2
 ctx.stroke()
 
 }
