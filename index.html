@@ -34,31 +34,23 @@ padding:6px;
 transition:opacity 0.3s;
 }
 
-/* TEXTO (AHORA MISMO TAMAÑO QUE LA IMAGEN) */
+/* TEXTO (VERSIÓN ORIGINAL) */
 
 .texto{
 position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
 color:black;
-background:rgba(255,255,255,0.88);
-
-padding:20px;
+background:rgba(255,255,255,0.85);
+padding:14px;
 font-size:13px;
 line-height:1.4;
-
 opacity:0;
 transition:opacity 0.3s;
-
-border-radius:8px;
-text-align:left;
+pointer-events:none;
+border-radius:6px;
+max-width:90%;
 }
 
 /* BOTÓN */
@@ -261,7 +253,7 @@ ctx.strokeStyle="rgba(0,0,0,0.25)"
 ctx.lineWidth=4
 ctx.stroke()
 
-/* LÍNEA ROJA MÁS VISIBLE */
+/* LÍNEA ROJA (MEJORADA) */
 ctx.beginPath()
 ctx.moveTo(points[0].x,points[0].y)
 
