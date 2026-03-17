@@ -34,7 +34,7 @@ padding:6px;
 transition:opacity 0.3s;
 }
 
-/* TEXTO */
+/* TEXTO (VERSIÓN ORIGINAL) */
 
 .texto{
 position:absolute;
@@ -120,27 +120,36 @@ alba:["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","1
 
 /* TEXTOS ANA */
 
-const textosAna=[ ... ] // (se mantiene igual)
+const textosAna=[
+`Escasos recuerdos de este día. Creo que la flor me la hicieron mis tías y primas. Mis papás ya estaban separados`,
+`Mención de honor por excelente rendimiento académico. Ya empezaba a necesitar de la validación externa. Excelente uso del animal print`,
+`El disfraz de coneja lo usamos mis primas, mi hermana y yo. Junto a esta foto me tomaron otra con mi padre que me tenía alzada. Mi papá me dice ratona pero nunca me disfracé de una.`,
+`6 años de uso casi diario. Ya no me las pongo tanto porque me sacan ampollas en los pies. Las uso con doble media para proteger mi piel. Me recuerdan a mi madre y a mi hermana.`,
+`Las uso como segunda capa para proteger mis pies de las botas que me hacen ampollas.`,
+`Lo compré para una ocasión importante. Me encanta pero lo uso poco porque tiene mangas largas que dan calor pero es un vestido corto para usarlo en el frío.`,
+`Me lo tejió mi mamá para mi primer invierno en Madrid. Me encanta su color y lo uso con mucho orgullo.`,
+`Es hecho en china. Mi hermana me lo regaló porque no era de su estilo. Se le pegan los pelos de mis gatos y le salen motas.`,
+`Es mi pantalón favorito. Tiene las medidas perfectas para mis caderas anchas y mi cintura pequeña. Cuatro años de uso`,
+`Mi hermana me dice Rana. Me regala medias de rana cada tanto.`,
+`Es heredado y se ve un poco viejo. Lo uso en casa. Lo voy a guardar para siempre.`,
+`Comprada de segunda mano por una aplicación. Su corte es perfecto, la más cómoda que tengo. No me importa su tela desgastada`
+]
 
 /* TEXTOS RODRIGO */
 
-const textosRodrigo=[ ... ] // (se mantiene igual)
-
-/* TEXTOS ALBA */
-
-const textosAlba=[
-`El disfraz de carnaval de mi hermana Marisa. Fue cosido por su abuela y nos ha acompañado a las 3 en muchos momentos de nuestras infancias. Un recuerdo en el laurel de nuestra casa.`,
-`Me dió mucho por Los Piratas del Caribe en esa época. Esa pistola me encantaba, Disneyland, secuestros aéreos y mucha lágrima. Otro recuerdo en el laurel de mi casa.`,
-`Vestida de hada en casa. Otra tarde de disfraces con mi hermana Mara en casa. Los guantes eran lo más, estaban ya muy gastados.`,
-`Performando Rockstar en la cocina. Mi madre siempre me vestía muy chula, cuando llevaba la camisa negra siempre cantaba la canción de Juanes. Las gafas también las han usado mis sobrinos.`,
-`Camiseta de la asociación de mi cuidadora Altea, de cuando tenía 12 años y aún me sigo poniendo. Una mujer que me enseñó y acompañó muchísimos, muchos veranos con playas y tortugas.`,
-`Top de mi madre de los 2000, ahora es mío. Lo usaba cuando íbamos a pasear o para estar en casa o en el jardín.`,
-`Camiseta enorme de mi padre, ahora mia. Del mismo año que mi obsesión con los Piratas del Caribe.`,
-`Chaqueta de cuando tenía 13, hace poco volví a usarla mucho. Momentos en todos lados con ella, la nieve, mi perra…`,
-`Algún punto saltado, manchas difusas pero los colores siguen vivos.`,
-`“Es sencillo ser feliz, lo difícil es ser sencillo”`,
-`El verano pasado me pintaron los tatuajes de mi espalda y se me tiñó la camiseta, me recuerda a momentos muy bonitos.`,
-`Las letras de esta camiseta se han ido abriendo con uso de mi madre y el mio. De verdad que es muy Comfortable.`
+const textosRodrigo=[
+`Siempre quise unos Dr.Martens. Esos son veganos -nunca estuvieron vivos-. 7 años caminando rajaron la suela.`,
+`Ropa interior blanca típica de gay en twitter. Me la compraron en circunstancias complejas de explicar. Cómodos, el algodón respira.`,
+`El merch que hicieron mis amigas de Biblioteca Queer. Me regalaron esa camiseta porque tiene una mancha de tinta. Estampar es resistir.`,
+`La primera vez que vi Sakura Card Captor me conmoví hasta las lágrimas. Mi colección de camisetas de animé me hacen sentir niño. El mundo no es nada sin magia.`,
+`Me costó 3 euros en un mercadillo. La tengo hace 10 años. Una vez la perdí en una fiesta y al otro día la encontré en los objetos perdidos.`,
+`Regalo del novio de una tía. Era de su abuelo. ¿Cuántos años tiene?`,
+`Ropa de hombre. La lana abriga como un abrazo. La fibra sin tejer no es ropa.`,
+`En la protesta me cubría el rostro. Me la regaló un amigo de la universidad. Me gustan los patrones intrincados.`,
+`Nunca más usaré corbata. Te quiero mucho Rodrigo inocente. La camisa blanca del colegio siempre volvía a casa con manchas.`,
+`Mi primer tatuaje me lo hice a los 15 años. No necesité permiso de mis padres. Tatuarse es una forma de vestirse.`,
+`Delia es la perra de mi profesora de Artes del colegio. Nos hicimos amigas una vez que me gradué. Estoy usando su ropa, la foto me la hizo ella en su casa de Padre Hurtado.`,
+`El vestido me lo regaló mi amiga Ara, una bruja de la costa. Esa máscara sirve para no morir ahogado bajo el humo de la lacrimógena policial. La cubrí de brillos cuando trabajaba de gogo.`
 ]
 
 /* FUNCIÓN */
@@ -163,16 +172,9 @@ let y=Math.random()*80
 container.style.left=x+"vw"
 container.style.top=y+"vh"
 
-/* TEXTO PARA TODOS */
+if(folder==="Ana" || folder==="rodrigo"){
 
-if(folder==="Ana" || folder==="rodrigo" || folder==="alba"){
-
-let textos
-
-if(folder==="Ana") textos=textosAna
-if(folder==="rodrigo") textos=textosRodrigo
-if(folder==="alba") textos=textosAlba
-
+let textos = folder==="Ana" ? textosAna : textosRodrigo
 let numero = parseInt(img.split(".")[0]) - 1
 textoBox.innerText = textos[numero]
 
@@ -212,7 +214,7 @@ container.onclick=null
 
 }
 
-/* LÍNEAS (igual que ya tenías) */
+/* LÍNEAS */
 
 function drawLines(){
 
@@ -239,16 +241,26 @@ y:rect.top+rect.height/2
 }
 })
 
+/* SOMBRA */
 ctx.beginPath()
 ctx.moveTo(points[0].x,points[0].y)
-for(let i=1;i<points.length;i++){ ctx.lineTo(points[i].x,points[i].y) }
+
+for(let i=1;i<points.length;i++){
+ctx.lineTo(points[i].x,points[i].y)
+}
+
 ctx.strokeStyle="rgba(0,0,0,0.25)"
 ctx.lineWidth=4
 ctx.stroke()
 
+/* LÍNEA ROJA (MEJORADA) */
 ctx.beginPath()
 ctx.moveTo(points[0].x,points[0].y)
-for(let i=1;i<points.length;i++){ ctx.lineTo(points[i].x,points[i].y) }
+
+for(let i=1;i<points.length;i++){
+ctx.lineTo(points[i].x,points[i].y)
+}
+
 ctx.strokeStyle="rgba(220,0,0,0.85)"
 ctx.lineWidth=2
 ctx.stroke()
