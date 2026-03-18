@@ -106,6 +106,21 @@ rodrigo:["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg"
 alba:["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg","11.jpg","12.jpg"]
 }
 
+const textosElvira=[
+`Mi primera obra de teatro. Mi abuela se rio mucho de esta combinación vestido-peluca: "parece una muñequita cutre".`,
+`No recuerdo ponerme este disfraz jamás, ni para qué. Llevaba años viéndolo en un cajón y ahora entiendo que alguna vez lo usé.`,
+`En mi primer campamento ambientado en Asterix y Obelix, todavía tengo la camiseta. Me queda como un crop top.`,
+`Vestido de flamenca para ir a la feria, sé que lo destroce de jugar con él y montarme a los "cacharritos".`,
+`Llevé esta camisa en mi primer dia en un "trabajo serio." De camino en el metro me tiraron un café encima sin querer.`,
+`Sudadera que me prestó una amiga, jamás se la devolví. Ahora las mangas están quemadas porque la uso para cocinar y estar por casa.`,
+`Solía ponerme este vestido de fiesta. La primera vez que besé a una chica lo llevaba puesto, y olía a cubata.`,
+`Falda "de picnic" que lleve tanto la primavera pasada que está completamente deshilachada.`,
+`Este jersey solo me lo pongo el día de mi cumpleaños para recrear una foto que empecé a hacerme a las 18 con él puesto.`,
+`Mono que me puse en un viaje largo en bici. Fue mala decisión, los pantalones son largos y anchos y se me enganchaban todo el rato.`,
+`Camisa de mi compañera de piso, le hice un remiendo y me la quedé.`,
+`Mi mejor amigo se fue a vivir a Argentina hace dos años y me donó la mitad de su armario: la parte de él que dejaba en España.`
+]
+
 const textosAna=[
 `Escasos recuerdos de este día. Creo que la flor me la hicieron mis tías y primas. Mis papás ya estaban separados`,
 `Mención de honor por excelente rendimiento académico. Ya empezaba a necesitar de la validación externa. Excelente uso del animal print`,
@@ -169,9 +184,13 @@ let y=Math.random()*80
 container.style.left=x+"vw"
 container.style.top=y+"vh"
 
-if(folder==="Ana" || folder==="rodrigo" || folder==="alba"){
+if(folder==="elvira" || folder==="Ana" || folder==="rodrigo" || folder==="alba"){
 
-let textos = folder==="Ana" ? textosAna : folder==="rodrigo" ? textosRodrigo : textosAlba
+let textos = folder==="elvira" ? textosElvira
+            : folder==="Ana" ? textosAna
+            : folder==="rodrigo" ? textosRodrigo
+            : textosAlba
+
 let numero = parseInt(img.split(".")[0]) - 1
 textoBox.innerText = textos[numero]
 
